@@ -21,6 +21,7 @@ public class App
 		Scanner scan = new Scanner(System.in);
 		
 		Affichage.MenuPrincipal();
+		
 		try {
 			choixMenu = scan.nextInt();
 			menu(choixMenu, choixMenuRetour);}
@@ -29,20 +30,7 @@ public class App
 			main(null);
 		}		
     }
-    
-    @SuppressWarnings("unused")
-	public static void verificationChiffre (Scanner scan, int choixMenu) {
-    	int a;
-    	try {
-			System.out.println("sasir note");
-			choixMenu = scan.nextInt();}
-		catch (Exception e) {
-			
-		}
-    	main(null);
-    }
- 
-    
+        
     public static void menu (int choixMenu, char choixMenuRetour) {
     	switch (choixMenu)
 		{

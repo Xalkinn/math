@@ -16,28 +16,36 @@ public class ChoixMenu {
 		Affichage.LabelSurface();
 		int choix;
 		Scanner choixSurface = new Scanner(System.in);
-		choix = choixSurface.nextInt();
+		
 		Scanner choixMain = new Scanner(System.in);
 		char choixRetourMenu = 0;
 		
-		switch (choix)
-		{
-		case 1:
-			factory.surfaceCercle(choixRetourMenu, choixMain);
-			break;
-		case 2:
-			factory.surfaceTriangle(choixRetourMenu, choixMain);
-			break;
-		case 3:
-			factory.surfaceCarre(choixRetourMenu, choixMain);
-			break;
-		case 4:
-			factory.surfaceRectangle(choixRetourMenu, choixMain);
-			break;
-		default:
-			Affichage.MauvaisChoix();
-			factory.retourMenu(choixRetourMenu, choixMain);
-		}
+		try {
+			choix = choixSurface.nextInt();
+			switch (choix)
+			{
+			case 1:
+				factory.surfaceCercle(choixRetourMenu, choixMain);
+				break;
+			case 2:
+				factory.surfaceTriangle(choixRetourMenu, choixMain);
+				break;
+			case 3:
+				factory.surfaceCarre(choixRetourMenu, choixMain);
+				break;
+			case 4:
+				factory.surfaceRectangle(choixRetourMenu, choixMain);
+				break;
+			default:
+				Affichage.MauvaisChoix();
+				factory.retourMenu(choixRetourMenu, choixMain);
+			}}
+		catch (Exception e) {
+			System.out.println("\nVeuillez entrer un chiffre valide !\n");
+			ChoixSurface();
+		}		
+		
+		
 	}
 	
 	
