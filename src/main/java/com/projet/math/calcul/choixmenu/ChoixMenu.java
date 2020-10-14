@@ -11,6 +11,7 @@ public class ChoixMenu {
 		factory.hypothenuse();
 	}
 	
+	@SuppressWarnings("resource")
 	public static void ChoixSurface () {
 		Affichage.LabelSurface();
 		int choix;

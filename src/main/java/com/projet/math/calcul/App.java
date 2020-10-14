@@ -11,17 +11,40 @@ import com.projet.math.calcul.label.Affichage;
  */
 public class App 
 {
-    public static void main( String[] args )
+    @SuppressWarnings({ "unused", "resource" })
+	public static void main( String[] args )
     {
     	int choixMenu;
 		int stopMenu;
 		char choixMenuRetour = 0;
-
+		boolean bsaisie = false ;
 		Scanner scan = new Scanner(System.in);
-		Affichage.MenuPrincipal();
-		choixMenu = scan.nextInt();
 		
-		switch (choixMenu)
+		Affichage.MenuPrincipal();
+		try {
+			choixMenu = scan.nextInt();
+			menu(choixMenu, choixMenuRetour);}
+		catch (Exception e) {
+			System.out.println("\nVeuillez entrer un chiffre valide !\n");
+			main(null);
+		}		
+    }
+    
+    @SuppressWarnings("unused")
+	public static void verificationChiffre (Scanner scan, int choixMenu) {
+    	int a;
+    	try {
+			System.out.println("sasir note");
+			choixMenu = scan.nextInt();}
+		catch (Exception e) {
+			
+		}
+    	main(null);
+    }
+ 
+    
+    public static void menu (int choixMenu, char choixMenuRetour) {
+    	switch (choixMenu)
 		{
 		case 0:
 			System.out.println("Aurevoir");
@@ -41,10 +64,11 @@ public class App
 			choixMenuRetour = choixRetour.next().charAt(choixMenuRetour);
 			
 			if (choixMenuRetour == 'o' || choixMenuRetour == 'O')
-				main(args);
+				main(null);
 			else if (choixMenuRetour == 'n' || choixMenuRetour == 'N')
 				System.out.println("Aurevoir");
 				break;
 		}
+    	return;
     }
 }

@@ -21,6 +21,7 @@ public static void retourMenu (char choixRetourMenu, Scanner choixMain) {
 		}
 	}
 	
+	@SuppressWarnings("resource")
 	public static void surfaceTriangle (char choixRetourMenu, Scanner choixMain) {
 		System.out.println("----- Surface d'un triangle -----");
 		Scanner base = new Scanner(System.in);
@@ -40,6 +41,7 @@ public static void retourMenu (char choixRetourMenu, Scanner choixMain) {
 		retourMenu(choixRetourMenu, choixMain);
 	}
 	
+	@SuppressWarnings("resource")
 	public static void surfaceRectangle (char choixRetourMenu, Scanner choixMain) {
 		System.out.println("----- Surface d'un rectangle -----");
 		Scanner longueur = new Scanner(System.in);
@@ -59,6 +61,7 @@ public static void retourMenu (char choixRetourMenu, Scanner choixMain) {
 		retourMenu(choixRetourMenu, choixMain);
 	}
 	
+	@SuppressWarnings("resource")
 	public static void surfaceCarre (char choixRetourMenu, Scanner choixMain) {
 		System.out.println("----- Surface d'un carré -----");
 		Scanner cote = new Scanner(System.in);
@@ -74,6 +77,7 @@ public static void retourMenu (char choixRetourMenu, Scanner choixMain) {
 		retourMenu(choixRetourMenu, choixMain);
 	}
 	
+	@SuppressWarnings("resource")
 	public static void surfaceCercle (char choixRetourMenu, Scanner choixMain){
 		System.out.println("----- Surface d'un cercle -----");
 		Scanner rayon = new Scanner(System.in);
@@ -90,6 +94,7 @@ public static void retourMenu (char choixRetourMenu, Scanner choixMain) {
 		retourMenu(choixRetourMenu, choixMain);
 	}
 	
+	@SuppressWarnings("resource")
 	public static void hypothenuse () {
 		System.out.println("----- Cacul de l'hypothenuse -----");
 		Scanner longueur = new Scanner(System.in);
