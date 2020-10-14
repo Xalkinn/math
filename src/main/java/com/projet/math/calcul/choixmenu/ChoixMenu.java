@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import com.projet.math.calcul.factory.factory;
 import com.projet.math.calcul.label.Affichage;
+import com.projet.math.calcul.operation.CalculMental;
 
 public class ChoixMenu {
 	
@@ -41,11 +42,15 @@ public class ChoixMenu {
 				factory.retourMenu(choixRetourMenu, choixMain);
 			}}
 		catch (Exception e) {
-			System.out.println("\nVeuillez entrer un chiffre valide !\n");
+			Affichage.ErreurChiffre();
 			ChoixSurface();
 		}		
 		
 		
+	}
+	
+	public static void ChoixCalculMental () {
+		CalculMental.NiveauDebutant();
 	}
 	
 	

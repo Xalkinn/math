@@ -26,7 +26,7 @@ public class App
 			choixMenu = scan.nextInt();
 			menu(choixMenu, choixMenuRetour);}
 		catch (Exception e) {
-			System.out.println("\nVeuillez entrer un chiffre valide !\n");
+			Affichage.ErreurChiffre();
 			main(null);
 		}		
     }
@@ -44,6 +44,10 @@ public class App
 			break;
 		case 2:
 			ChoixMenu.ChoixSurface();
+			main(null);
+			break;
+		case 3:
+			ChoixMenu.ChoixCalculMental();
 			main(null);
 			break;
 		default:

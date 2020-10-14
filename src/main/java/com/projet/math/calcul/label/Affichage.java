@@ -10,6 +10,7 @@ public class Affichage {
 				+ "\n\n0 - Quitter"
 				+ "\n\n1 - Calcul d'hypothenuse"
 				+ "\n\n2 - Calcul de surface"
+				+ "\n\n3 - Calcul mental"
 				+ "\n\n\nVotre choix : ");
 	}
 	
@@ -29,6 +30,10 @@ public class Affichage {
 				+ "\n4 - Surface d'un rectangle"
 				+ "\n"
 				+ "\nVotre choix : ");
+	}
+	
+	public static void ErreurChiffre () {
+		System.out.println("\nVeuillez entrer un chiffre valide !\n");
 	}
 
 }
