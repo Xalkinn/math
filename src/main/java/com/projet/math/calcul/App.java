@@ -51,7 +51,7 @@ public class App
 			main(null);
 			break;
 		default:
-			Affichage.MauvaisChoix();
+			Affichage.RetourMenuPrincipal();
 			Scanner choixRetour = new Scanner(System.in);
 			choixMenuRetour = choixRetour.next().charAt(choixMenuRetour);
 			

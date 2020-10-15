@@ -12,19 +12,28 @@ public class ChoixMenu {
 		factory.hypothenuse();
 	}
 	
-	@SuppressWarnings("resource")
+	@SuppressWarnings({ "resource", "unused" })
 	public static void ChoixSurface () {
 		Affichage.LabelSurface();
-		int choix;
+		int choix = 0;
 		Scanner choixSurface = new Scanner(System.in);
 		
 		Scanner choixMain = new Scanner(System.in);
 		char choixRetourMenu = 0;
-		
+		SelectionSurface(choix, choixSurface, choixRetourMenu, choixMain);
+	}
+	
+	public static void ChoixCalculMental () {
+		CalculMental.NiveauDebutant();
+	}
+	
+	public static void SelectionSurface (int choix, Scanner choixSurface, char choixRetourMenu, Scanner choixMain) {
 		try {
 			choix = choixSurface.nextInt();
 			switch (choix)
 			{
+			case 0:
+				factory.retourMenu(choixRetourMenu, choixMain);
 			case 1:
 				factory.surfaceCercle(choixRetourMenu, choixMain);
 				break;
@@ -38,19 +47,13 @@ public class ChoixMenu {
 				factory.surfaceRectangle(choixRetourMenu, choixMain);
 				break;
 			default:
-				Affichage.MauvaisChoix();
-				factory.retourMenu(choixRetourMenu, choixMain);
+				Affichage.ErreurChiffre();
+				ChoixSurface();
 			}}
 		catch (Exception e) {
-			Affichage.ErreurChiffre();
-			ChoixSurface();
-		}		
-		
-		
-	}
-	
-	public static void ChoixCalculMental () {
-		CalculMental.NiveauDebutant();
+			Affichage.RetourMenuPrincipal();
+			factory.retourMenu(choixRetourMenu, choixMain);
+		}
 	}
 	
 	

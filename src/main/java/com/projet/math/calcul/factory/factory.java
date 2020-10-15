@@ -3,9 +3,12 @@ package com.projet.math.calcul.factory;
 import java.util.Scanner;
 
 import com.projet.math.calcul.App;
+import com.projet.math.calcul.label.Affichage;
 import com.projet.math.calcul.operation.Calcul;
 
 public class factory {
+	
+	static String[] operateurfacile = {"+", "-"};
 public static void retourMenu (char choixRetourMenu, Scanner choixMain) {
 		
 		choixRetourMenu = choixMain.next().charAt(choixRetourMenu);
@@ -116,5 +119,64 @@ public static void retourMenu (char choixRetourMenu, Scanner choixMain) {
 		Scanner choixMain = new Scanner(System.in);
 		char choixRetourMenu = 0;
 		retourMenu(choixRetourMenu, choixMain);
+	}
+	
+	@SuppressWarnings("resource")
+	public static void calculMental (int nombreCalculInt, int Bonnesrep) {
+		for (int i = 0; i < nombreCalculInt; i++) {
+			 
+            int Nbralea1 = (int) (Math.random() * 30); // 2 Nombres aléatoires
+            int Nbralea2 = (int) (Math.random() * 30);
+            int NbrSoustraction = Nbralea1 - Nbralea2; // Soustraction calculée par l'ordi
+            int NbrAddition = Nbralea1 + Nbralea2; // Addition calculée par l'ordi
+            int OperateurAleatab = (int) (Math.random() * operateurfacile.length); // Nombre aléatoire entre 0 et la taille du tableau Débutant
+            String OperateurAlea = operateurfacile[OperateurAleatab];           // Stocke le signe correspond à la
+            int numCalcul = i+1;
+ 
+            if (OperateurAlea.equals(operateurfacile[1])) // EXCEPTION Soustraction
+            {
+                if (Nbralea1 > Nbralea2 && Nbralea1 > 2 && Nbralea2 > 2) {
+                    System.out.println("Calcul " + numCalcul + " : " + Nbralea1 + OperateurAlea + Nbralea2 + "=");
+                } else {
+                    while (Nbralea1 < 2 || Nbralea2 < 2 || Nbralea1 < Nbralea2) {
+                        Nbralea1 = (int) (Math.random() * 30);
+                        Nbralea2 = (int) (Math.random() * 30);
+                        NbrSoustraction = Nbralea1 - Nbralea2;
+                    }
+                    System.out.println("Calcul " + numCalcul + " : " + Nbralea1 + OperateurAlea + Nbralea2 + "=");
+                }
+            } else if (OperateurAlea.equals(operateurfacile[0])) // Affichage de l'addition
+            {
+                System.out.println("Calcul " + numCalcul + " : " + Nbralea1 + OperateurAlea + Nbralea2 + "=");
+            }
+            else{
+                System.out.println("Mauvais operateur généré par ta fonction random");
+            }
+            try {
+	            Scanner sc = new Scanner(System.in);
+	            int nbr = sc.nextInt();
+	            //int nbr = Isn.readInt(); // Demande à l'utilisateur le résultat
+	 
+	            if (OperateurAlea.equals(operateurfacile[0]) && nbr == NbrAddition) // Comparaison résultat juste avec résultat du joueur
+	            {
+	                Bonnesrep++;
+	                System.out.println("Résultat JUSTE\n");
+	
+	 
+	            } else if (OperateurAlea.equals(operateurfacile[1]) && nbr == NbrSoustraction) {
+	                Bonnesrep++;
+	                System.out.println("Résultat JUSTE \n");
+	 
+	            } else if (OperateurAlea.equals(operateurfacile[0]) && nbr != NbrAddition) { // Si résultat FAUX, on affiche le bon résultat
+	                System.out.println("FAUX. Bon résultat ---> " + NbrAddition + "\n");
+	            } else {
+	                System.out.println("FAUX. Bon résultat ---> " + NbrSoustraction + "\n");
+	            }
+            }catch (Exception e) {
+            	Affichage.ErreurChiffre();
+            	
+            }
+        }
+		return;
 	}
 }

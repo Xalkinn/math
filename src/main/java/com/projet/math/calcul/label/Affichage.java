@@ -14,7 +14,7 @@ public class Affichage {
 				+ "\n\n\nVotre choix : ");
 	}
 	
-	public static void MauvaisChoix()
+	public static void RetourMenuPrincipal()
 	{
 		System.out.println("Ceci est un mauvais choix "
 				+ "\nVoulez vous revenir au menu principal ? (o/n)"
@@ -24,16 +24,18 @@ public class Affichage {
 	public static void LabelSurface () {
 		System.out.println("----- Cacul de la surface -----"
 				+ "\n"
-				+ "\n1 - Surface d'un cercle"
-				+ "\n2 - Surface d'un triangle"
-				+ "\n3 - Surface d'un carre"
-				+ "\n4 - Surface d'un rectangle"
+				+ "\n0 - Retour menu principal"
+				+ "\n\n1 - Surface d'un cercle"
+				+ "\n\n2 - Surface d'un triangle"
+				+ "\n\n3 - Surface d'un carre"
+				+ "\n\n4 - Surface d'un rectangle"
 				+ "\n"
 				+ "\nVotre choix : ");
 	}
 	
 	public static void ErreurChiffre () {
-		System.out.println("\nVeuillez entrer un chiffre valide !\n");
+		System.out.println("\nVeuillez entrer un chiffre valide !\n"
+				+ "Retour\n");
 	}
 
 }
